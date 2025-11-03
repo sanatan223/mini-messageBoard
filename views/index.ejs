@@ -16,14 +16,14 @@
             <div class="message-card">
                 <div class="message-header">
                     <div class="author">
-                        <%= message.user %>
+                        <%= message.author %>
                     </div>
                     <div class="timestamp">
-                        <%= message.added.toDateString() %>
+                        <%= message.created_at.toDateString() %>
                     </div>
                 </div>
                 <div class="message-content">
-                    <%= message.text %>
+                    <%= message.message %>
                 </div>
             </div>
         <% }); %>
