@@ -31,7 +31,7 @@ indexRouter.get("/new", (req, res) => {
 })
 
 indexRouter.post("/new", (req, res) => {
-    const name = req.body.user_name;
+    const name = req.body.author;
     const message = req.body.message;
     messages.push({
       text: message,

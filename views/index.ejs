@@ -3,27 +3,38 @@
 
 <head>
     <link rel="stylesheet" href="/styles.css">
+    <title>Message Board</title>
 </head>
 
 <body>
-    <% messages.forEach((message, i)=> { %>
-        <div class="body">
-            <div class="user-info">
-                <div class="user-name">
-                    <%= message.user %>
+    <div class="container">
+        <header>
+            <h1>💬 Message Board</h1>
+            <p class="subtitle">Share your thoughts with the community</p>
+        </header>
+        <% messages.forEach((message, i)=> { %>
+            <div class="message-card">
+                <div class="message-header">
+                    <div class="author">
+                        <%= message.user %>
+                    </div>
+                    <div class="timestamp">
+                        <%= message.added.toDateString() %>
+                    </div>
                 </div>
-                <div class="message-date">
-                    <%= message.added.toDateString() %>
+                <div class="message-content">
+                    <%= message.text %>
                 </div>
             </div>
-            <div class="message">
-                <%= message.text %>
+        <% }); %>
+        <button class="message-card" onclick="window.location.href='/new'">
+            <div 
+            class="message-content"
+            style="cursor:pointer;"
+            >
+                <b>Add a new messaage</b>
             </div>
-        </div>
-    <% }); %>
-    <div class="body" style="width: 100px;">
-        <div class="message" style="cursor:pointer;" 
-  onclick="window.location.href='/new'"><b>Add a new messaage</b></div>
+        </button>
     </div>
 </body>
 
